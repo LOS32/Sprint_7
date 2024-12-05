@@ -1,10 +1,9 @@
-BASE_URL = "https://qa-scooter.praktikum-services.ru"
+BASE_URL = "https://qa-scooter.praktikum-services.ru/api/v1/"
+ORDERS_URL = 'orders/'
+COURIERS_URL = 'courier/'
 
-ENDPOINTS = {
-    "create_courier": f"{BASE_URL}/api/v1/courier",
-    "login_courier": f"{BASE_URL}/api/v1/courier/login",
-    "delete_courier": f"{BASE_URL}/api/v1/courier/{{courier_id}}"
-}
+ORDER_DATA_1 = {}
+ORDER_DATA_2 = {}
 
 COURIER_DATA = {
     "valid_courier": {
