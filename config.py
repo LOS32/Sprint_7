@@ -7,16 +7,20 @@ ORDER_DATA_2 = {}
 
 COURIER_DATA = {
     "valid_courier": {
-        "login": "ninja",
+        "login": "ninаа",
         "password": "1234",
         "firstName": "saske"
     },
     "missing_login": {
-        "password": "ninja",
+        "password": "1234",
+        "firstName": "saske"
+    },
+    "missing_password": {
+        "login": "linjn",
         "firstName": "saske"
     },
     "duplicate_courier": {
-        "login": "ninja",
+        "login": "naygd",
         "password": "1234",
         "firstName": "saske"
     }

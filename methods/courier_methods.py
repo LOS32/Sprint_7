@@ -11,8 +11,15 @@ class CourierMethods:
         response = requests.post(f'{BASE_URL}{COURIERS_URL}', json=payload)
         return response
 
+    def login_courier(self, login, password):
+        payload = {
+            "login": login,
+            "password": password,
+        }
+        response = requests.post(f'{BASE_URL}{COURIERS_URL}login', json=payload)
+        return response
+
     def delete_courier(self, courier_id):
-        """Удаляет курьера по ID."""
         response = requests.delete(f'{BASE_URL}{COURIERS_URL}{courier_id}')
         if response.status_code == 200:
             print(f"Courier with ID '{courier_id}' successfully deleted.")
