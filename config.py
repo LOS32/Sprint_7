@@ -32,4 +32,12 @@ COURIER_DATA = {
         "login": "",
         "password": "1234"
     },
+    "login_with_invalid_login": {
+        "login": "ninva",
+        "password": "1234"
+    },
+    "login_with_invalid_password": {
+        "login": "ninja",
+        "password": "4321"
+    },
 }

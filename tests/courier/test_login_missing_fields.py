@@ -21,5 +21,3 @@ class TestLoginMissingFields:
             f"Expected 400 and 'Недостаточно данных для входа', got {response.status_code} and {response.json()}"
 
 
-
-
