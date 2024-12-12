@@ -1,6 +1,6 @@
-import pytest
-from config import BASE_URL, COURIERS_URL, COURIER_DATA
+from config import COURIER_DATA
 from methods.courier_methods import CourierMethods
+from conftest import courier
 
 
 class TestSuccessfulLogin:
