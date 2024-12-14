@@ -2,7 +2,7 @@ import pytest
 from config import COURIER_DATA
 from methods.courier_methods import CourierMethods
 
-
+@allure.feature('Ошибка при отсутсвии одного поля')
 class TestLoginMissingFields:
     @pytest.mark.parametrize(
         "courier_data, missing_field",
@@ -11,6 +11,7 @@ class TestLoginMissingFields:
             (COURIER_DATA["login_without_password"], "password"),
         ]
     )
+    @allure.title('Тест на проверку логина курьера при отсутсвии одного поля')
     def test_login_missing_field(self, courier_data, missing_field):
         courier_methods = CourierMethods()
         response = courier_methods.login_courier(

@@ -2,6 +2,7 @@ import pytest
 from config import ORDER_DATA
 from conftest import order
 
+@allure.feature('Создание заказа')
 class TestCreateOrder:
     @pytest.mark.parametrize(
         'order_data',
@@ -12,6 +13,7 @@ class TestCreateOrder:
             ORDER_DATA["order_data_two_colors"]
         ]
     )
+    @allure.title('Тест на проверку создания заказа с различными данными')
     def test_create_order(self, order, order_data):
         response = order["order_methods"].create_order(order_data)
         response_json = response.json()

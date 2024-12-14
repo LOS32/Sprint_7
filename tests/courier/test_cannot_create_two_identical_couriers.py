@@ -1,7 +1,9 @@
 from methods.courier_methods import CourierMethods
 from config import COURIER_DATA
 
+@allure.feature('Регистраия курьера с одинаковыми данными')
 class TestCannotCreateTwoIdenticalCouriers:
+    @allure.title('Тест на проверку регистрации двух курьеров с одинаковыми данными')
     def test_cannot_create_two_identical_couriers(self):
         courier_methods = CourierMethods()
         courier_methods.create_courier(

@@ -2,7 +2,7 @@ import pytest
 from config import COURIER_DATA
 from methods.courier_methods import CourierMethods
 
-
+@allure.feature('Ошибка при логине курьера')
 class TestLoginNegative:
     @pytest.mark.parametrize(
         "courier_data, missing_field",
@@ -11,6 +11,7 @@ class TestLoginNegative:
             (COURIER_DATA["login_with_invalid_password"], "password"),
         ]
     )
+    @allure.title('Тест на проверку логина курьера с не валидными данными')
     def test_login_negative(self, courier_data, missing_field):
         courier_methods = CourierMethods()
         response = courier_methods.login_courier(

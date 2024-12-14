@@ -2,7 +2,9 @@ from helpers import register_new_courier_and_return_login_password
 import requests
 from config import BASE_URL, COURIERS_URL
 
+@allure.feature('Регистраия курьера')
 class TestCourier:
+    @allure.title('Успешная регистрации курьера')
     def test_create_courier(self):
         courier_data = register_new_courier_and_return_login_password()
         payload = {
