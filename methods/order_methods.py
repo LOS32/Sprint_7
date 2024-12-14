@@ -23,6 +23,6 @@ class OrderMethods:
         return response
 
     def get_order_by_track(self, track_number):
-        response = requests.get(f"{BASE_URL}{ORDERS_URL}track?t={track_number}")
+        response = requests.get(f"{BASE_URL}{ORDERS_URL}/track", params={"t": track_number})
         return response
 
