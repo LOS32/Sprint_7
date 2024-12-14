@@ -10,13 +10,19 @@ class OrderMethods:
         response = requests.delete(f"{BASE_URL}{ORDERS_URL}delete/{id}", json=params)
         return response.status_code, response.json()
 
-
     def create_order(self, order_data):
         response = requests.post(f"{BASE_URL}{ORDERS_URL}", json=order_data)
         return response
 
-
     def get_orders(self):
         response = requests.get(f"{BASE_URL}{ORDERS_URL}")
+        return response
+
+    def accept_order(self, order_id, courier_id):
+        response = requests.put(f"{BASE_URL}{ORDERS_URL}accept/{order_id}?courierId={courier_id}")
+        return response
+
+    def get_order_by_track(self, track_number):
+        response = requests.get(f"{BASE_URL}{ORDERS_URL}track?t={track_number}")
         return response
 

@@ -10,7 +10,6 @@ class CourierMethods:
         }
         response = requests.post(f'{BASE_URL}{COURIERS_URL}', json=payload)
         return response
-
     def login_courier(self, login, password):
         payload = {
             "login": login,
@@ -18,7 +17,6 @@ class CourierMethods:
         }
         response = requests.post(f'{BASE_URL}{COURIERS_URL}login', json=payload)
         return response
-
     def delete_courier(self, courier_id):
         response = requests.delete(f'{BASE_URL}{COURIERS_URL}{courier_id}')
         if response.status_code == 200:
