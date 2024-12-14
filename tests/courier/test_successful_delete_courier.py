@@ -3,7 +3,6 @@ import allure
 from methods.courier_methods import CourierMethods
 from helpers import register_new_courier_and_return_login_password
 
-
 @allure.feature('Удаление курьера')
 class TestDeleteCourier:
     @allure.title('Успешное удаление курьера')
