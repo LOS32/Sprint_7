@@ -1,3 +1,4 @@
+import allure
 from methods.courier_methods import CourierMethods
 from config import COURIER_DATA
 

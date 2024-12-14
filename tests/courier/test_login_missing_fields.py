@@ -1,4 +1,5 @@
 import pytest
+import allure
 from config import COURIER_DATA
 from methods.courier_methods import CourierMethods
 

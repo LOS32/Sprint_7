@@ -1,5 +1,6 @@
 import pytest
 import requests
+import allure
 from config import BASE_URL, COURIERS_URL, COURIER_DATA
 
 @allure.feature('Регистраия курьера при отсутсвии одного поля')

@@ -1,4 +1,5 @@
 import pytest
+import allure
 from config import ORDER_DATA
 from conftest import order
 
