@@ -1,6 +1,8 @@
 import pytest
 from methods.courier_methods import CourierMethods
+from methods.order_methods import OrderMethods
 from config import COURIER_DATA
+from config import ORDER_DATA
 
 @pytest.fixture()
 def courier():
@@ -14,3 +16,13 @@ def courier():
     yield courier_id
     if courier_id:
         CourierMethods().delete_courier(courier_id)
+
+@pytest.fixture()
+def order():
+    order_methods = OrderMethods()
+    order_data = ORDER_DATA["order_data_black"]
+    response = order_methods.create_order(order_data)
+    order_track = response.json().get("track")
+    yield {"order_methods": order_methods, "order_track": order_track}
+    if order_track:
+        order_methods.delete_order(order_track)
