@@ -14,7 +14,7 @@ ORDER_DATA = {
         "comment": "Saske, come back to Konoha",
         "color": ["BLACK"]
     },
-    "order_data_2": {
+    "order_data_grey": {
         "firstName": "Sakura",
         "lastName": "Haruno",
         "address": "Konoha, 143 apt.",

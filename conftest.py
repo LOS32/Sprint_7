@@ -24,5 +24,3 @@ def order():
     response = order_methods.create_order(order_data)
     order_track = response.json().get("track")
     yield {"order_methods": order_methods, "order_track": order_track}
-    if order_track:
-        order_methods.delete_order(order_track)

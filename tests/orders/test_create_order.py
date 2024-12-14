@@ -1,5 +1,4 @@
 import pytest
-from methods.order_methods import OrderMethods
 from config import ORDER_DATA
 from conftest import order
 
@@ -8,7 +7,7 @@ class TestCreateOrder:
         'order_data',
         [
             ORDER_DATA["order_data_black"],
-            ORDER_DATA["order_data_2"],
+            ORDER_DATA["order_data_grey"],
             ORDER_DATA["order_data_no_color"],
             ORDER_DATA["order_data_two_colors"]
         ]
@@ -18,6 +17,7 @@ class TestCreateOrder:
         response_json = response.json()
         assert response.status_code == 201 and "track" in response_json, \
             f"Expected status 201 and 'track' in response, got {response.status_code} and {response_json}"
+
 
 
 
