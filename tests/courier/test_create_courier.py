@@ -1,7 +1,5 @@
-import requests
 import allure
 from helpers import register_new_courier_and_return_login_password
-from config import BASE_URL, COURIERS_URL
 from methods.courier_methods import CourierMethods
 
 @allure.feature('Регистраия курьера')

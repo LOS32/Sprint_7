@@ -13,7 +13,7 @@ class TestLoginMissingFields:
         ]
     )
     @allure.title('Тест на проверку логина курьера при отсутсвии одного поля')
-    def test_login_missing_field(self, courier_data, missing_field):
+    def test_login_missing_fields(self, courier_data, missing_field):
         courier_methods = CourierMethods()
         response = courier_methods.login_courier(
             courier_data.get("login"),

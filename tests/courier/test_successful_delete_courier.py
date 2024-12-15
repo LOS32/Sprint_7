@@ -1,10 +1,9 @@
-import pytest
 import allure
 from methods.courier_methods import CourierMethods
 from helpers import register_new_courier_and_return_login_password
 
 @allure.feature('Удаление курьера')
-class TestDeleteCourier:
+class TestSuccessfulDeleteCourier:
     @allure.title('Успешное удаление курьера')
     def test_successful_delete_courier(self):
         courier_methods = CourierMethods()
