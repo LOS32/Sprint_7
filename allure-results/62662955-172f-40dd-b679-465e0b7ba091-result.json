@@ -1,1 +1,0 @@
-{"name": "Тест на проверку получения списка заказов", "status": "passed", "start": 1734239906096, "stop": 1734239939222, "uuid": "56cd7de5-1b6a-4335-b01a-dc4b20d8fb71", "testCaseId": "7230c6c65488a399f2340e20dce5820a", "fullName": "tests.orders.test_get_orders.TestGetOrders#test_get_orders"}

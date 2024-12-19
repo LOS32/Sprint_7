@@ -1,23 +1,32 @@
 import requests
+import allure
 from config import BASE_URL, COURIERS_URL
 
 class CourierMethods:
-    def create_courier(self, login, password, firstName):
+    @staticmethod
+    @allure.step("Создание курьера")
+    def create_courier(login, password, first_name):
         payload = {
             "login": login,
             "password": password,
-            "firstName": firstName
+            "firstName": first_name
         }
         response = requests.post(f'{BASE_URL}{COURIERS_URL}', json=payload)
         return response
-    def login_courier(self, login, password):
+
+    @staticmethod
+    @allure.step("Вход курьера")
+    def login_courier(login, password):
         payload = {
             "login": login,
             "password": password,
         }
         response = requests.post(f'{BASE_URL}{COURIERS_URL}login', json=payload)
         return response
-    def delete_courier(self, courier_id):
+
+    @staticmethod
+    @allure.step("Удаление курьера")
+    def delete_courier(courier_id):
         response = requests.delete(f'{BASE_URL}{COURIERS_URL}{courier_id}')
         if response.status_code == 200:
             print(f"Courier with ID '{courier_id}' successfully deleted.")
