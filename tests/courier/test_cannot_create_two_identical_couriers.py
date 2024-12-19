@@ -1,6 +1,6 @@
 import allure
 from methods.courier_methods import CourierMethods
-from config import COURIER_DATA
+from config import COURIER_DATA, COURIER_RESPONSES
 
 @allure.feature('Регистраия курьера с одинаковыми данными')
 class TestCannotCreateTwoIdenticalCouriers:
@@ -17,5 +17,5 @@ class TestCannotCreateTwoIdenticalCouriers:
             COURIER_DATA["duplicate_courier"]["password"],
             COURIER_DATA["duplicate_courier"]["firstName"]
         )
-        assert duplicate_response.status_code == 409 and duplicate_response.json().get("message") == "Этот логин уже используется. Попробуйте другой."
-
+        assert duplicate_response.status_code == 409 and duplicate_response.json().get("message") == COURIER_RESPONSES[
+            "duplicate_courier"]

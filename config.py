@@ -90,3 +90,16 @@ INVALID_ORDER_ID = 3633333
 INVALID_COURIER_ID = 123456789
 NO_COURIER_ID = ""
 NO_ORDER_ID = ""
+
+COURIER_RESPONSES = {
+    "duplicate_courier": "Этот логин уже используется. Попробуйте другой.",
+    "insufficient_data": "Недостаточно данных для создания учетной записи",
+    "not_found": "Курьера с таким id нет.",
+    "account_not_found": "Учетная запись не найдена",
+    "login_insufficient_data": "Недостаточно данных для входа",
+    "not_found_generic": "Not Found.",
+    "courier_id_not_found": "Курьера с таким id не существует",
+    "order_not_found": "Заказа с таким id не существует",
+    "not_found_data": "Недостаточно данных для поиска",
+    "not_found_number_order": "Заказ не найден"
+}

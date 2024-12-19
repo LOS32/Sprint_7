@@ -1,7 +1,7 @@
 import allure
 from methods.order_methods import OrderMethods
 from methods.courier_methods import CourierMethods
-from config import COURIER_DATA, ORDER_DATA, INVALID_COURIER_ID
+from config import COURIER_DATA, ORDER_DATA, INVALID_COURIER_ID, COURIER_RESPONSES
 
 @allure.feature("Принятие заказа")
 class TestAcceptOrderInvalidCourierId:
@@ -26,7 +26,4 @@ class TestAcceptOrderInvalidCourierId:
         order_id = get_order_response.json()["order"].get("id")
         accept_order_response = order_methods.accept_order(order_id, invalid_courier_id)
         response_json = accept_order_response.json()
-        assert accept_order_response.status_code == 404 and response_json.get(
-            "message") == "Курьера с таким id не существует", (
-            f"Expected status 404 with 'Курьера с таким id не существует', but got {accept_order_response.status_code} and {response_json}"
-        )
+        assert accept_order_response.status_code == 404 and response_json.get("message") == COURIER_RESPONSES["courier_id_not_found"]

@@ -1,7 +1,7 @@
 import allure
 from methods.order_methods import OrderMethods
 from methods.courier_methods import CourierMethods
-from config import COURIER_DATA, ORDER_DATA, NO_COURIER_ID
+from config import COURIER_DATA, ORDER_DATA, NO_COURIER_ID, COURIER_RESPONSES
 
 
 @allure.feature("Принятие заказа")
@@ -28,10 +28,7 @@ class TestAcceptOrderMissingCourierId:
         order_id = get_order_response.json()["order"].get("id")
         accept_order_response = order_methods.accept_order(order_id, no_courier_id)  # Здесь не передаётся ID курьера
         response_json = accept_order_response.json()
-        assert accept_order_response.status_code == 400 and response_json.get(
-            "message") == "Недостаточно данных для поиска", (
-            f"Expected status 400 with 'Недостаточно данных для поиска', but got {accept_order_response.status_code} and {response_json}"
-        )
+        assert accept_order_response.status_code == 400 and response_json.get("message") == COURIER_RESPONSES["not_found_data"]
 
 
 

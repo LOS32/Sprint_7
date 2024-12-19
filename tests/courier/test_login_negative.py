@@ -1,6 +1,6 @@
 import pytest
 import allure
-from config import COURIER_DATA
+from config import COURIER_DATA, COURIER_RESPONSES
 from methods.courier_methods import CourierMethods
 
 @allure.feature('Ошибка при логине курьера')
@@ -19,5 +19,4 @@ class TestLoginNegative:
             courier_data.get("login"),
             courier_data.get("password")
         )
-        assert response.status_code == 404 and response.json().get("message") == "Учетная запись не найдена", \
-            f"Expected 400 and 'Недостаточно данных для входа', got {response.status_code} and {response.json()}"
+        assert response.status_code == 404 and response.json().get("message") == COURIER_RESPONSES["account_not_found"]

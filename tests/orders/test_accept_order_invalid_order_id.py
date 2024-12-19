@@ -26,7 +26,4 @@ class TestAcceptOrderMissingCourierId:
         invalid_order_id = INVALID_ORDER_ID
         accept_order_response = order_methods.accept_order(invalid_order_id, courier_id)
         response_json = accept_order_response.json()
-        assert accept_order_response.status_code == 404 and response_json.get(
-            "message") == "Заказа с таким id не существует", (
-            f"Expected status 404 with 'Заказа с таким id не существует', but got {accept_order_response.status_code} and {response_json}"
-        )
+        assert accept_order_response.status_code == 404 and response_json.get("message") == COURIER_RESPONSES["order_not_found"]
