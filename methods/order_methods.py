@@ -14,8 +14,11 @@ class OrderMethods:
         response = requests.post(f"{BASE_URL}{ORDERS_URL}", json=order_data)
         return response
 
-    def get_orders(self):
-        response = requests.get(f"{BASE_URL}{ORDERS_URL}")
+    def get_orders(self, courier_id=None):
+        params = {}
+        if courier_id:
+            params["courierId"] = courier_id
+        response = requests.get(f"{BASE_URL}{ORDERS_URL}", params=params)
         return response
 
     def accept_order(self, order_id, courier_id):

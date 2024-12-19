@@ -1,13 +1,16 @@
 import allure
-from conftest import order
+from conftest import courier_and_login, order_id
 
-@allure.feature('Список заказов')
-class TestGetOrders:
-    @allure.title('Тест на проверку получения списка заказов')
-    def test_get_orders(self, order):
-        order["order_methods"].create_order(order["order_track"])
-        response = order["order_methods"].get_orders()
-        response_json = response.json()
-        assert isinstance(response_json.get("orders"), list), f"'orders' is not a list or missing: {response_json}"
+@allure.feature("Получение списка заказов")
+@allure.title("Тест на проверку получения списка заказов по ID курьера")
+def test_get_orders(courier_and_login, order_id):
+    courier_id = courier_and_login
+    order_methods = order_id["order_methods"]
+    created_order_id = order_id["order_id"]
+    accept_order_response = order_methods.accept_order(created_order_id, courier_id)
+    get_orders_response = order_methods.get_orders(courier_id=courier_id)
+    response_json = get_orders_response.json()
+    assert accept_order_response.status_code == 200 and isinstance(response_json.get("orders"), list), f"'orders' is not a list or missing: {response_json}"
+
 
 
