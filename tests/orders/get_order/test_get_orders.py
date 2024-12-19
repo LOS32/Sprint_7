@@ -11,4 +11,3 @@ class TestGetOrders:
         assert isinstance(response_json.get("orders"), list), f"'orders' is not a list or missing: {response_json}"
 
 
-

@@ -17,5 +17,4 @@ class TestCannotCreateTwoIdenticalCouriers:
             COURIER_DATA["duplicate_courier"]["password"],
             COURIER_DATA["duplicate_courier"]["firstName"]
         )
-        assert duplicate_response.status_code == 409 and duplicate_response.json().get("message") == COURIER_RESPONSES[
-            "duplicate_courier"]
+        assert duplicate_response.status_code == 409 and duplicate_response.json().get("message") == COURIER_RESPONSES["duplicate_courier"]
